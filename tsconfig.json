@@ -15,7 +15,9 @@
     },
     "include": [
         // "src/import-export-test/**/*"
-        "src/**/*"
+        // "src/**/*"
+        "src/util.ts",
+        "src/selectionSort.ts"
     ],
     "exclude": [
      
