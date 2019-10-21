@@ -11,30 +11,28 @@ function bubblePass(xs, n) {
     draw(xs);
     requestAnimationFrame(() => bubblePass(xs, n + 1));
 }
-function selectionPass(xs, i, n) {
-    if (n & 10) {
-        let indx = i;
-        for (let j = i + 1; j < xs.length; j++) {
-            if (xs[indx] > xs[j]) {
-                indx = j;
-            }
+function selectionSort(xs) {
+    for (let i = 0; i < xs.length - 1; i++) {
+        let idx = i;
+        for (let j = i; j < xs.length; j++) {
+            if (xs[idx] > xs[j])
+                idx = j;
         }
-        swap(xs, indx, i);
+        if (idx == i)
+            swap(xs, i, idx);
     }
-    if (i < xs.length - 1)
-        i + 1;
-    draw(xs);
-    requestAnimationFrame(() => selectionPass(xs, i, n + 1));
 }
 // func01
 //
 // requestAimationFrame(func01);
 function main() {
     let out = [];
-    for (let i = 0; i < 600; i++) {
+    for (let i = 0; i < 10; i++) {
         out.push(Math.floor(Math.random() * 100));
     }
-    console.log("test");
+    let out2 = [3, 5, 1, 2];
+    selectionSort(out2);
+    console.log(out2);
 }
 main();
 //# sourceMappingURL=selectionSort.js.map
